@@ -1,2 +1,10 @@
 # Engineering-71
-A collection of labs and projects for Sparta Global Eng-71 class
+[C# Core]()
+
+[C# OOP]()
+
+[C# Data]()
+
+[C# SDET 1]()
+
+[C# SDET 2]()
