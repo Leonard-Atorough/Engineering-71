@@ -31,8 +31,6 @@
 16. File Operations and Logging
 17. Introduction to WPF
 
-
-
 ## C# OOP
 
 1. Introduction to the 4 pillars of OOP
