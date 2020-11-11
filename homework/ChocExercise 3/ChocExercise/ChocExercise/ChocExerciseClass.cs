@@ -14,7 +14,14 @@ namespace ChocExercise
              If input data is invalid you should return 0(as in no breaks are needed 
              if we do not have any chocolate to split). Input will always be a non-negative integer. */
 
-            return 0;
+            if (n * m > 0)
+                {
+                return n * m - 1;
+                }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
