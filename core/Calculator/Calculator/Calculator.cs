@@ -19,7 +19,7 @@ namespace Calculator
             return x * y;
         }
 
-        public static int Quotient(int x, int y)
+        public static double Quotient(int x, int y)
         {
             return x / y;
         }
