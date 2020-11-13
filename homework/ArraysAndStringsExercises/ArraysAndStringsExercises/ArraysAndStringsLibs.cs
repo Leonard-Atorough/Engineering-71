@@ -23,21 +23,14 @@ namespace ArraysAndStringsLib
         {
             bool result = double.TryParse(numString, out double numDouble);
 
-            if (result)
-            {
-                return numDouble;
-            }
-
-            else
-            {
-                return -999;
-            }
+            return (result) ? numDouble : -999;
 
         }
+
+        //Consider using string builder
         public static string ManipulateString(string input, int num)
         {
-            var output = input.Trim();
-            output = output.ToUpper();
+            var output = input.Trim().ToUpper();
             for (int i = 0; i < num; i++)
             {
                 output += i;
