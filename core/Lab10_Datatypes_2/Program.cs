@@ -12,15 +12,15 @@ namespace Lab10_Datatypes_2
             //var tps = TimeSpan.TicksPerSecond;
             //var nowInTicks = DateTime.Now.Ticks;
 
-            var d = new DateTime();
-            var d1 = DateTime.Today;
-            var d2 = DateTime.Now;
-            var d3 = new DateTime(1996, 11, 26, 6, 0, 0);
+            //var d = new DateTime();
+            //var d1 = DateTime.Today;
+            //var d2 = DateTime.Now;
+            //var d3 = new DateTime(1996, 11, 26, 6, 0, 0);
 
-            var age = d2 - d3;
-            var result = (age.Days / 365.25);
+            //var age = d2 - d3;
+            //var result = (age.Days / 365.25);
 
-            Console.WriteLine(Math.Floor(result));
+            //Console.WriteLine(Math.Floor(result));
 
             //var timespan = new TimeSpan(1, 0, 0);
             //var d4 = new DateTime(1996, 11, 26, 6, 0, 0);
