@@ -30,7 +30,11 @@ namespace Calculator
             {
                 throw new DivideByZeroException("Cannot divide by zero");
             }
-            return x % y;
+            else
+            {
+                return x % y;
+            }
+            
         }
     }
 }

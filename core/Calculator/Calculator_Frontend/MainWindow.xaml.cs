@@ -27,39 +27,23 @@ namespace Calculator_Frontend
         }
 
         // Initial variable delcaration
-        string x;
+        string x = "";
         string y;
         char symbol = '0';
 
 
         // Method object handlers
-        private void Add_Click(object sender, RoutedEventArgs e)
+        private void Operation_Click(object sender, RoutedEventArgs e)
         {
-            symbol = '+';
+            Button button = sender as Button;
+            var tag = (button).Content.ToString();
+
+            symbol = Char.Parse(tag);
             displayBox.Text += symbol;
         }
-
-        private void Subtract_Click(object sender, RoutedEventArgs e)
-        {
-            symbol = '-';
-            displayBox.Text += symbol;
-        }
-
-        private void Multiply_Click(object sender, RoutedEventArgs e)
-        {
-            symbol = 'x';
-            displayBox.Text += symbol;
-        }
-
-        private void Divide_Click(object sender, RoutedEventArgs e)
-        {
-            symbol = '/';
-            displayBox.Text += symbol;
-        }
-
 
         // Calculation initialize object handler - Runs the calculation and displays the result
-        private void Operate_Click(object sender, RoutedEventArgs e)
+        private void Calculate_Click(object sender, RoutedEventArgs e)
         {
 
             double num1 = double.Parse(x);
@@ -88,208 +72,26 @@ namespace Calculator_Frontend
             displayBox.Text = output.ToString();
             x = output.ToString();
             y = "";
-
-            /* if (symbol == '+')
-            {
-                double output = CalculatorMethods.Add(num1, num2);
-
-                displayBox.Text = output.ToString();
-                x = output.ToString();
-                y = "";
-            }
-            else if (symbol == '-')
-            {
-                double output = CalculatorMethods.Subtract(num1, num2);
-
-                displayBox.Text = output.ToString();
-                x = output.ToString();
-                y = "";
-            }
-            else if (symbol == 'x')
-            {
-                double output = CalculatorMethods.Product(num1, num2);
-
-                displayBox.Text = output.ToString();
-                x = output.ToString();
-                y = "";
-            }
-           else if (symbol == '/')
-            {
-                double output = CalculatorMethods.Quotient(num1, num2);
-
-                displayBox.Text = output.ToString();
-                x = output.ToString();
-                y = "";
-            }
-
-            else
-            {
-                displayBox.Text = "Error!";
-                x = "";
-            } */
-
         }
 
 
         // Number button click handlers - assigns values to variables and prints to screen
-        private void One_Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
+            var tag = (button).Content.ToString();
+
             if (symbol == '0')
             {
-                x += '1';
+                x += tag;
                 displayBox.Text = x;
             }
 
             else
             {
-                y += '1';
+                y += tag;
                 displayBox.Text = ($"{x}{symbol}{y}");
             }
-
-        }
-
-        private void Two_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '2';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '2';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
-        }
-
-        private void Three_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '3';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '3';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
-        }
-
-        private void Four_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '4';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '4';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
-        }
-
-        private void Five_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '5';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '5';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
-        }
-
-        private void Six_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '6';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '6';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
-        }
-
-        private void Seven_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '7';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '7';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
-        }
-
-        private void Eight_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '8';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '8';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
-        }
-
-        private void Nine_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '9';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '9';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
-        }
-
-        private void Zero_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == '0')
-            {
-                x += '0';
-                displayBox.Text = x;
-            }
-
-            else
-            {
-                y += '0';
-                displayBox.Text = ($"{x}{symbol}{y}");
-            }
-
         }
 
         private void Clear_Button_Click(object sender, RoutedEventArgs e)
@@ -300,19 +102,19 @@ namespace Calculator_Frontend
             displayBox.Text = "";
         }
 
-        private void Dot_Button_Click(object sender, RoutedEventArgs e)
+        private void Minus_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (symbol == '0')
+            if (symbol == 0 && x.Contains("-") == false)
             {
-                x += '.';
-                displayBox.Text = x;
+
             }
 
-            else
+            else if (symbol == 0 && x.Contains("-") == true)
             {
-                y += '.';
-                displayBox.Text = ($"{x}{symbol}{y}");
+
             }
+            
+            else if
         }
     }
 }
