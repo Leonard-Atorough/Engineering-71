@@ -102,19 +102,19 @@ namespace Calculator_Frontend
             displayBox.Text = "";
         }
 
-        private void Minus_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (symbol == 0 && x.Contains("-") == false)
-            {
+        //private void Minus_Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (symbol == 0 && x.Contains("-") == false)
+        //    {
 
-            }
+        //    }
 
-            else if (symbol == 0 && x.Contains("-") == true)
-            {
+        //    else if (symbol == 0 && x.Contains("-") == true)
+        //    {
 
-            }
+        //    }
             
-            else if
-        }
+        //    else if
+        //}
     }
 }
