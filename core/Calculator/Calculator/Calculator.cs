@@ -21,7 +21,7 @@ namespace Calculator
 
         public static double Quotient(double x, double y)
         {
-            if (Math.Floor(y) == 0)
+            if (y == 0)
             {
                 throw new DivideByZeroException("Error");
             }
