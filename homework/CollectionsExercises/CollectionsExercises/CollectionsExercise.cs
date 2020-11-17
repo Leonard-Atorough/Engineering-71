@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace CollectionsExercises
 {
@@ -9,32 +10,34 @@ namespace CollectionsExercises
         /* removes and returns the next num entries in the queue, as a comma separated string */
         public static string NextInQueue(int num, Queue<string> queue)
         {
-            if (queue.Count < num)
-            {
-                num = queue.Count;
-            }
+            num = num > queue.Count ? queue.Count : num;
 
-            string[] entries = new string[num];
+            StringBuilder result = new StringBuilder();
+            //string[] entries = new string[num];
 
             for (int i = 0; i < num; i++)
             {
-                string item = queue.Dequeue();
-                entries[i] = item;
+                result.Append($"{queue.Dequeue()}, ");
+
+                //string item = queue.Dequeue();
+                //entries[i] = item;
             }
 
-            string output = string.Join(", ", entries);
-            return output;
+            ////string output = string.join(", ", entries);
+            ////return output;
+
+            return result.Length == 0 ? "" : result.Remove(result.Length - 2, 2).ToString();
         }
 
         /* uses a Stack to create and return array of ints in reverse order to the one supplied */
         public static int[] Reverse(int[] original)
         {
-            Stack<int> stack = new Stack<int>();
-            
-            foreach (int item in original)
-            {
-                stack.Push(item);
-            }
+            Stack<int> stack = new Stack<int>(original);
+
+            //foreach (int item in original)
+            //{
+            //    stack.Push(item);
+            //}
 
             int[] output = new int[original.Length];
 
@@ -68,7 +71,7 @@ namespace CollectionsExercises
             string output = "";
             foreach (var item in dictionary)
             {
-                output += string.Join(" ", $"[{item.Key}, {item.Value}]");              
+                output += string.Join(" ", $"[{item.Key}, {item.Value}]");
             }
 
             return output;

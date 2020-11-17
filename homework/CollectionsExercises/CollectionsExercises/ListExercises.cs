@@ -30,16 +30,12 @@ namespace CollectionsExercisesLib
             {
                 return 0;
             }
-            else
+            double total = 0;
+            foreach (double item in argList)
             {
-                double total = 0;
-                foreach (double item in argList)
-                {
-                    total += item;
-                };
-
-                return (total / argList.Count);
-            }
+                total += item;
+            };
+            return (total / argList.Count);
         }
 
         // returns a list of all the strings in sourceList that start with the letter 'A' or 'a'
@@ -49,11 +45,7 @@ namespace CollectionsExercisesLib
 
             foreach (string item in sourceList)
             {
-                if (item.StartsWith('A'))
-                {
-                    newList.Add(item);
-                }
-                else if (item.StartsWith('a'))
+                if (item.ToLower().StartsWith('a'))
                 {
                     newList.Add(item);
                 }

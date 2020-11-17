@@ -16,7 +16,7 @@ namespace DataTypesPt2Lib
             }
             else
             {
-                var age = date.Subtract(birthDate);
+                var age = date - birthDate;
 
                 return (int)Math.Floor(age.Days / 365.25);
             }
