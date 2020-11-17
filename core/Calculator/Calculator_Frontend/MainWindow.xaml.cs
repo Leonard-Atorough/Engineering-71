@@ -59,14 +59,20 @@ namespace Calculator_Frontend
                     output = CalculatorMethods.Subtract(num1, num2);
                     break;
                 case ('/'):
-                    output = CalculatorMethods.Quotient(num1, num2);
+                    try
+                    {
+                        output = CalculatorMethods.Quotient(num1, num2);
+                    }
+                    catch (DivideByZeroException ex)
+                    {
+
+                    }
                     break;
                 case ('x'):
                         output = CalculatorMethods.Product(num1, num2);
                         break;
                 default:
                     x = "";
-                    output = 0;
                     break;
             }
             displayBox.Text = output.ToString();

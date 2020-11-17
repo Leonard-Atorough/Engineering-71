@@ -55,5 +55,12 @@ namespace Calculator_Test
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+
+        public void divideByZeroExceptionTest()
+        {
+
+        }
+
     }
 }

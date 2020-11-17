@@ -21,20 +21,19 @@ namespace Calculator
 
         public static double Quotient(double x, double y)
         {
-            return x / y;
-        }
-
-        public static double Modulus(double x, double y)
-        {
-            if (y == 0)
+            if (y < 1e-12 && y > -1e-12)
             {
                 throw new DivideByZeroException("Cannot divide by zero");
             }
             else
             {
-                return x % y;
+                return x / y;
             }
-            
+        }
+
+        public static double Modulus(double x, double y)
+        {
+            return x % y;
         }
     }
 }
