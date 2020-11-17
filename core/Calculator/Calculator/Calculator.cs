@@ -21,9 +21,9 @@ namespace Calculator
 
         public static double Quotient(double x, double y)
         {
-            if (y < 1e-12 && y > -1e-12)
+            if (Math.Floor(y) == 0)
             {
-                throw new DivideByZeroException("Cannot divide by zero");
+                throw new DivideByZeroException("Error");
             }
             else
             {

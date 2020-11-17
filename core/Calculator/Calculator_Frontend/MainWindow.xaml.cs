@@ -49,35 +49,38 @@ namespace Calculator_Frontend
             double num1 = double.Parse(x);
             double num2 = double.Parse(y);
             double output = 0;
-
-            switch (symbol)
+            try
             {
-                case ('+'):
-                    output = CalculatorMethods.Add(num1, num2);
-                    break;
-                case ('-'):
-                    output = CalculatorMethods.Subtract(num1, num2);
-                    break;
-                case ('/'):
-                    try
-                    {
+                switch (symbol)
+                {
+                    case ('+'):
+                        output = CalculatorMethods.Add(num1, num2);
+                        break;
+                    case ('-'):
+                        output = CalculatorMethods.Subtract(num1, num2);
+                        break;
+                    case ('/'):
                         output = CalculatorMethods.Quotient(num1, num2);
-                    }
-                    catch (DivideByZeroException ex)
-                    {
 
-                    }
-                    break;
-                case ('x'):
+                        break;
+                    case ('x'):
                         output = CalculatorMethods.Product(num1, num2);
                         break;
-                default:
-                    x = "";
-                    break;
+                    default:
+                        x = "";
+                        break;
+                }
+                displayBox.Text = output.ToString();
+                x = output.ToString();
+                y = "";
             }
-            displayBox.Text = output.ToString();
-            x = output.ToString();
-            y = "";
+            catch (DivideByZeroException ex)
+            {
+                displayBox.Text = ex.Message;
+                x = "";
+                y = "";
+            }
+           
         }
 
 
@@ -95,6 +98,10 @@ namespace Calculator_Frontend
 
             else
             {
+                if (x == "")
+                {
+                    x = "0";
+                }
                 y += tag;
                 displayBox.Text = ($"{x}{symbol}{y}");
             }
@@ -105,7 +112,7 @@ namespace Calculator_Frontend
             x = "";
             y = "";
             symbol = '0';
-            displayBox.Text = "";
+            displayBox.Clear();
         }
 
         //private void Minus_Button_Click(object sender, RoutedEventArgs e)
