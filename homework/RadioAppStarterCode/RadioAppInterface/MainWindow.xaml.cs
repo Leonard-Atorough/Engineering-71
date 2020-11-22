@@ -96,7 +96,7 @@ namespace RadioAppInterface
                     x++;
                     radio.Channel = x;
                     DisplayBox.Text = $"Switching to channel {x}. Press Play!";
-                    radioPlayer.Play();
+                    
                 }
                 if (x > 4)
                 {
