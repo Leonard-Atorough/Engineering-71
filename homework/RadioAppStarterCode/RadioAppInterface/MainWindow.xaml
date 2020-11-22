@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadioAppInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="150" Width="800" Foreground="White" Background="DarkCyan">
+        Title="MainWindow" Height="170" Width="800" Foreground="White" Background="DarkCyan">
     <Grid>
         <!--<Grid.Background>
             <ImageBrush ImageSource="Coffee.jpg" Opacity="0.8" AlignmentY="Center"/>
@@ -26,13 +26,14 @@
         </Grid.RowDefinitions>
         
         
-        <MediaElement Grid.ColumnSpan="5" Grid.Column="0" HorizontalAlignment="Stretch"  Margin="20"  VerticalAlignment="Stretch" />
-        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Style="{StaticResource DisplayStyle}"/>
+        <MediaElement x:Name="radioPlayer" Grid.ColumnSpan="5" Grid.Column="0" HorizontalAlignment="Stretch"  Margin="20"  VerticalAlignment="Stretch" LoadedBehavior="Manual" />
+        <TextBox x:Name="DisplayBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Style="{StaticResource DisplayStyle}">
+        </TextBox>
 
         <TextBlock FontSize="24" Grid.Row="1" VerticalAlignment="Bottom" Margin="7">Volume</TextBlock>
-        <Slider Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Top" Value="0.75" Maximum="1" HorizontalAlignment="Stretch" Margin="2,10,2,2"/>
+        <Slider x:Name="VolumeSlider" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Top" Value="0.75" Maximum="1" HorizontalAlignment="Stretch" Margin="2,10,2,2" ValueChanged="VolumeSlider_ValueChanged" />
 
-        <Button Content="Play" Grid.Column="4" Grid.Row="1" Style="{StaticResource ButtonStyle}"  >
+        <Button Content="Play" Grid.Column="4" Grid.Row="1" Style="{StaticResource ButtonStyle}" Click="Play_Button_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF595959"/>
@@ -41,7 +42,7 @@
             </Button.Background>
         </Button>
         
-        <Button Content="Pause" Grid.Column="5" Grid.Row="1" Style="{StaticResource ButtonStyle}" >
+        <Button Content="Pause" Grid.Column="5" Grid.Row="1" Style="{StaticResource ButtonStyle}" Click="Pause_Button_Click" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF595959"/>
@@ -50,13 +51,14 @@
             </Button.Background>
         </Button>
         
-        <Button Content="Next" Grid.Column="6" Grid.Row="1" Style="{StaticResource ButtonStyle}" >
+        <Button Content="Next" Grid.Column="6" Grid.Row="1" Style="{StaticResource ButtonStyle}" Click="Next_Button_Click" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF595959"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
+
         </Button>
 
         <Button  Content="ON/OFF" Grid.Column="5" Grid.Row="0" Style="{StaticResource ButtonStyle}" Grid.ColumnSpan="2" Click="OnOff_Button_Click">
