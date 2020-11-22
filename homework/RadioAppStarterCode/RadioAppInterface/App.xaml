@@ -8,9 +8,10 @@
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
-            <Setter Property="Background" Value="SandyBrown"/>
+            <Setter Property="Background" Value="LightBlue"/>
             <Setter Property="FontFamily" Value="Bahnschrift SemiCondensed"/>
-            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="UltraBold"/>
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="BorderBrush" Value="Black"/>
         </Style>
@@ -19,10 +20,11 @@
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="FontFamily" Value="Bahnschrift SemiCondensed"/>
-            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="FontSize" Value="24"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Background" Value="CornflowerBlue"/>
         </Style>
 
         <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
