@@ -1,0 +1,46 @@
+﻿<Application x:Class="RadioAppInterface.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:RadioAppInterface"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="FontFamily" Value="Bahnschrift SemiCondensed"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="UltraBold"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+        </Style>
+
+        <FontFamily x:Key="7SegFontFamily">/RadioAppInterface;Component/RadioAppInterface/#NI7SEG</FontFamily>
+        <Style x:Key="DisplayStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="FontFamily" Value="#NI7SEG"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="BorderBrush" Value="Teal"/>
+        </Style>
+
+        <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="FontFamily" Value="Bahnschrift SemiCondensed"/>
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="Margin" Value="15,15,15,15"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
+        
+        
+    </Application.Resources>
+</Application>
