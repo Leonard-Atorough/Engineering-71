@@ -4,46 +4,69 @@ namespace RadioApp
 {
     public class Radio
     {
-        public bool _on;
         private int _channel = 1;
 
+        public bool On { get; set; }
         public int Channel
         {
             get { return _channel; }
-            set 
-            {  
-                if (_on == true && value > 0 && value <= 4)
+            set
+            {
+                if (On == true && value > 0 && value <= 4)
                 { _channel = value; }
             }
         }
+        public bool Playing { get; set; }
+        public int Volume { get; set; } = 75;
 
         public string Play()
         {
-            if (_on == true)
+            if (On == true)
             {
+                Playing = true;
                 return ($"Playing channel {Channel}.");
             }
             else
             {
-                return ("Radio is off");
+                return ("");
             }
+            
+        }
+
+        public string Pause()
+        { 
+            if (Playing == true)
+            {
+                Playing = false;
+                return "Paused";
+            }
+            else
+            {
+                return "Paused";
+            }
+            
         }
 
         public void TurnOff()
         {
-            if (_on == true)
+            if (On == true)
             {
-                _on = false;
+                On = false;
             }
         }
 
         public void TurnOn()
         {
-            if (_on == false)
+            if (On == false)
             {
-                _on = true;
+                On = true;
 
             }
+        }
+
+        public void ChangeVolume()
+        {
+
         }
 
     }

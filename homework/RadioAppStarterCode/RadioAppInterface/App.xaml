@@ -8,21 +8,26 @@
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
-            <Setter Property="Background" Value="SandyBrown"/>
+            <Setter Property="Background" Value="LightBlue"/>
             <Setter Property="FontFamily" Value="Bahnschrift SemiCondensed"/>
-            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="UltraBold"/>
             <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
         </Style>
 
+        <FontFamily x:Key="7SegFontFamily">/RadioAppInterface;Component/RadioAppInterface/#NI7SEG</FontFamily>
         <Style x:Key="DisplayStyle" TargetType="{x:Type TextBox}">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="FontFamily" Value="Bahnschrift SemiCondensed"/>
-            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="FontFamily" Value="#NI7SEG"/>
+            <Setter Property="FontSize" Value="24"/>
             <Setter Property="Margin" Value="10,10,10,10"/>
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="BorderBrush" Value="Teal"/>
         </Style>
 
         <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
@@ -35,5 +40,7 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="Background" Value="Lavender"/>
         </Style>
+        
+        
     </Application.Resources>
 </Application>

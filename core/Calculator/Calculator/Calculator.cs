@@ -21,7 +21,14 @@ namespace Calculator
 
         public static double Quotient(double x, double y)
         {
-            return x / y;
+            if (y == 0)
+            {
+                throw new DivideByZeroException("Error");
+            }
+            else
+            {
+                return x / y;
+            }
         }
 
         //public static double Modulus(double x, double y)

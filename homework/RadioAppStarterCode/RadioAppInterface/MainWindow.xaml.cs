@@ -26,56 +26,95 @@ namespace RadioAppInterface
             InitializeComponent();
         }
 
-        Radio radio = new Radio();
-        private void On_Button_Click(object sender, RoutedEventArgs e)
-        {
-            radio.TurnOn();
-            
-            DisplayBox.Text = ($"Radio is on. {radio.Play()}");
-        }
 
-        private void Off_Button_Click(object sender, RoutedEventArgs e)
+
+        Radio radio = new Radio();
+
+        private void OnOff_Button_Click(object sender, RoutedEventArgs e)
         {
-            radio.TurnOff();
-            DisplayBox.Text = ("Turning off...");
+
+            if (radio.On == false)
+            {
+                radio.TurnOn();
+                DisplayBox.Text = "Turning on...";
+            }
+            else
+            {
+                radio.TurnOff();
+                DisplayBox.Text = "Turning off...";
+                radioPlayer.Pause();
+            }
+            
         }
 
         private void Play_Button_Click(object sender, RoutedEventArgs e)
         {
             var x = radio.Play();
             DisplayBox.Text = x;
+            if (radio.On == true)
+            {
+                radioPlayer.Play();
+            }
+
+            switch (radio.Channel)
+            {
+                case (1):
+                    radioPlayer.Source = new Uri("C:/github/Engineering-71/homework/RadioAppStarterCode/RadioAppInterface/Audio/bensound-birthofahero.mp3");
+                    break;
+                case (2):
+                    radioPlayer.Source = new Uri("C:/github/Engineering-71/homework/RadioAppStarterCode/RadioAppInterface/Audio/bensound-epic.mp3");
+                    break;
+                case (3):
+                    radioPlayer.Source = new Uri("C:/github/Engineering-71/homework/RadioAppStarterCode/RadioAppInterface/Audio/bensound-evolution.mp3");
+                    break;
+                case (4):
+                    radioPlayer.Source = new Uri("C:/github/Engineering-71/homework/RadioAppStarterCode/RadioAppInterface/Audio/bensound-theduel.mp3");
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void Channel_Button_Click(object sender , RoutedEventArgs e)
+        private void Pause_Button_Click(object sender, RoutedEventArgs e)
         {
-            var x = (sender as Button).Content.ToString();
-
-            if (radio._on == true)
+            var x = radio.Pause();
+            DisplayBox.Text = x;
+            if (radio.On)
             {
-                switch (x)
+                radioPlayer.Pause();
+            }
+        }
+
+        private static int x = 1;
+        private void Next_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (radio.On == true)
+            {
+                if (x > 0 && x <= 4)
                 {
-                    case ("1"):
-                        radio.Channel = 1;
-                        break;
-                    case ("2"):
-                        radio.Channel = 2;
-                        break;
-                    case ("3"):
-                        radio.Channel = 3;
-                        break;
-                    case ("4"):
-                        radio.Channel = 4;
-                        break;
-                    default:
-                        break;
+                    x++;
+                    radio.Channel = x;
+                    DisplayBox.Text = $"Switching to channel {x}. Press Play!";
+                    
                 }
-                DisplayBox.Text = $"Switching Channel. {radio.Play()}";
+                if (x > 4)
+                {
+                    x = 1;
+                    radio.Channel = x;
+                    DisplayBox.Text = $"Switching to channel {x}. Press Play!";
+                }
             }
             else
             {
-                DisplayBox.Text = "Radio is off.";
+                DisplayBox.Text = "";
             }
-          
         }
+
+        private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            radioPlayer.Volume = VolumeSlider.Value;
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Calculator;
+using System;
 
 namespace Calculator_Test
 {
@@ -53,6 +54,16 @@ namespace Calculator_Test
         {
             var result = CalculatorMethods.Modulus(a, b);
             Assert.AreEqual(expected, result);
+        }
+
+        [TestCase(5,0)]
+
+        public void divideByZeroExceptionTest(int x, int y)
+        {
+            var ex = Assert.Throws<DivideByZeroException>(() => CalculatorMethods.Quotient(x, y));
+
+            Assert.AreEqual("Error", ex.Message);
+
         }
 
     }
